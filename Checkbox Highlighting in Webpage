@@ -1,0 +1,15 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach((checkbox, index) => {
+        checkbox.addEventListener('change', () => {
+            const row = document.querySelector(`#row-${index + 1}`);
+            if (row) {
+                row.classList.toggle('highlight', checkbox.checked);
+            }
+        });
+    });
+});
+<table>
+    <tr id="row-1"><td><input type="checkbox"></td><td>Row 1</td></tr>
+    <tr id="row-2"><td><input type="checkbox"></td><td>Row 2</td></tr>
+</table>
